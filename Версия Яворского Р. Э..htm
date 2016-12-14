@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<script>
+    var i = 0;
+    function score() {
+        i = i + 1;
+        resEl = document.getElementById('res');
+        resEl.innerHTML = String(i);
+    }
+</script>
+
+<svg width="1000" height="1000" style="border: 1px solid black; background: #E0FFFF;">
+
+  <circle id="c1" onclick="score()" cx="150" cy="150" r="40" stroke="cyan" stroke-width="5" fill="rgb(170,170,255)" />
+
+  <animate 
+           xlink:href="#c1"
+           attributeName="cx"
+           values="150;650;200;100;700;300;450;150"
+           dur="6s"
+           repeatCount="550"
+  />
+  <animate 
+           xlink:href="#c1"
+           attributeName="cy"
+           values="150;650;200;100;700;300;450;150"
+           dur="4s"
+           repeatCount="550"
+
+  />
+
+  <animate 
+           xlink:href="#c1"
+           attributeName="fill"
+           values="red;yellow;rgb(170,170,255)"
+           begin="click"
+           dur="0.5s"
+           repeatCount="1"
+  />
+
+</svg>
+
+<br />
+<h1>Score: <span id="res"></span></h1> 
+</body>
+</html>
